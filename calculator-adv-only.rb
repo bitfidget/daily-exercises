@@ -1,56 +1,3 @@
-def menu()
-	puts "Please select from the following:"
-	puts "(s)imple calculator"
-	puts "(a)dvanced calculator"
-  puts "(q)uit"
-	choice = gets.chomp
-	case choice # run correct function depending on choice
-	when 's'
-		basic_calculator
-	when 'a'
-		advanced_calculator
-  when 'q'
-    quit
-  else 
-    puts "Fat fingers? Lets try that again..."
-    menu
-	end
-end
-
-# basic calcs only from here - first allow user to choose function they want to use
-def basic_calculator()
-	puts "Please select your operation:"
-	puts "(a)ddition"
-	puts "(s)ubtraction"
-	puts "(d)ivision"
-	puts "(m)ultiplication"
-	operation = gets.chomp
-  if operation == 'q'
-    quit #silly quit function
-  end
-# prompt for numbers from user  
-	print "Enter first number: "
-	num1 = gets.chomp.to_f
-	print "Enter second number: "
-	num2 = gets.chomp.to_f
-# complete calc functions on numbers that were input 
-	case operation
-	when 'a'
-		add(num1, num2)
-	when 's'
-		subtract(num1, num2)
-	when 'd'
-		divide(num1, num2)
-	when 'm'
-		multiply(num1, num2)
-  when 'q'
-    quit
-	else
-		puts "Please enter a, s, d or m"
-    basic_calculator
-	end
-end
-
 def advanced_calculator()
   puts "Please select your operation:"
   puts "(s)square root"
@@ -62,7 +9,7 @@ def advanced_calculator()
     quit
   end
 
-# advanced calculator functions start here
+
   case operation_advanced
   when 's'
     print "Enter your number: "
@@ -88,8 +35,9 @@ def advanced_calculator()
     print "What interest rate are you getting? "
     num3 = gets.chomp.to_f
     mor(num1, num2, num3)
+
   when 'q'
-    quit #silly quit function
+    quit
   else
     puts "Please enter s or e"
   end
@@ -108,7 +56,6 @@ def exp(x,y)
   puts "#{x} to the power of #{y} = #{x ** y}"
 end
 
-# too much info included on BMI calc?
 def bmi(x,y)
   yourbmi = y / (x * x)
   puts "#{y} devided by #{x} squared = #{y / (x * x) }"
@@ -134,7 +81,6 @@ def bmi(x,y)
   puts "Your BMI of #{yourbmi} puts you in the #{result.upcase} range for your height"
 end
 
-# mortgage calculator 
 def mor(x,y,z)
   c = (z/12)/100 # rate
   n = (y*12) #number pf payments
@@ -142,23 +88,7 @@ def mor(x,y,z)
   puts "your monthly payment = #{x} * ((#{c} * ((1 + #{c}) ** #{n})) / (((1 + #{c}) ** #{n}) - 1)) = $#{payment.round(2)}"
 end
 
-def add(x,y)
-	puts "#{x} + #{y} = #{x + y}"
-end
 
-def subtract(x,y)
-	puts "#{x} - #{y} = #{x - y}"
-end
+advanced_calculator
 
-def multiply(x,y)
-	puts "#{x} x #{y} = #{x * y}"
-end
 
-def divide(x,y)
-	puts "#{x} / #{y} = #{x / y}"
-end
-
-# keep the program looping
-while true
-	menu()
-end
