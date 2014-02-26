@@ -13,11 +13,23 @@ def calculate(total)
   puts "  -  - subtraction"
   puts "  x  - multiplication"
   puts "  /  - division"
+  puts "  S  - square"
+  puts "  R  - square root"
+  puts "---------------------"
   puts "  C  - clear"
   puts "  Q  - quit"
   operation = gets.chomp
 
+# chnage this to an array
+  if operation != (('s') || ('r') || ('q') || ('c') || ('+') || ('-') || ('x') || ('/'))
+    calculate(total)
+  end
+
   case operation
+  when 's'
+    square(total)
+  when 'r'
+    squareroot(total)
   when 'q'
     exit
   when 'c'
@@ -50,30 +62,40 @@ end
 
 # and all the calculation happens here
 def add(x,y)
-	puts "#{x} + #{y} = #{x + y}"
   total = x + y
+  puts total
   calculate(total)
 end
 
 def subtract(x,y)
-	puts "#{x} - #{y} = #{x - y}"
   total = x - y
+  puts total
   calculate(total)
 end
 
 def multiply(x,y)
-	puts "#{x} x #{y} = #{x * y}"
   total = x * y
+  puts total
   calculate(total)
 end
 
 def divide(x,y)
-	puts "#{x} / #{y} = #{x / y}"
   total = x / y
+  puts total
+  calculate(total)
+end
+
+def square(x)
+  total = x * x
+  puts total
+  calculate(total)
+end
+
+def squareroot(x)
+  total = Math.sqrt(x)
+  puts total
   calculate(total)
 end
 
 total = nil
 calculate(total)
-
-

@@ -1,0 +1,8 @@
+us=["Simon","Anne","Olly","Kriss","Nix","Tom","Erik","Charlie","Mark"]
+
+print "How many people per group? "
+group_n = gets.chomp.to_i
+
+result = us.length % group_n
+
+puts result
