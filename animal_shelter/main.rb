@@ -84,6 +84,7 @@ while response != 7
         adopter = gets.chomp
 
         #EUREKA! this two lines does what we wanted - add the chosen animal to the chosen client's hash
+        # THANKS MATHIILDA!!
 
         shelter.clients[adopter].pets[adopt] = shelter.animals[adopt]
         shelter.animals.delete(adopt)       
