@@ -1,0 +1,36 @@
+background-size: 100 auto;
+/* maintains aspect ratio */
+
+background-size: cover;
+/* fills all space */
+
+background: linear-gradient (to right, colour, 0%, colour, 100%)
+- try www.colorzilla.com/gradient-editor
+
+
+text-shadow
+box-shadow
+
+both use x-offset, y-offset, blur-radius, colour
+
+border radius - starting top-left
+
+
+
+
+for transition animations - check out animate.css
+
+to set off animations as you scroll to them - wow.js
+
+to set up animations check - jeremyckahn.github.io/stylie
+
+images - check out -webkit-filter properties
+- saturate
+- blur
+
+
+prefixes for some of the more awesome css3 properties
+-webkit-
+-moz-
+-ms-
+-o-

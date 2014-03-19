@@ -54,6 +54,7 @@ begin
   end
   code = "AAPL"
   queryyahoo(code)
+  puts "Yahoo connection == SUCCESS!"
   yahoo_connect = true
 rescue
   puts "!ALERT! Connection to Yahoo! server not possible at this time. No share buy/sell options will be available."

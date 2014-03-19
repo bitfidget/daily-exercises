@@ -1,0 +1,21 @@
+body{
+  background: #F60;
+}
+div{
+  border: 1px dotted #FFF;
+}
+
+
+
+.invisible{
+  display: none;
+}
+.static{
+  position: static;
+}
+.relative{
+  position: relative;
+}
+.fixed{
+  position: fixed;
+}

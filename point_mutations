@@ -1,0 +1,15 @@
+string1 = "GAGCCTACTAACGGGAT".split(//)
+string2 = "CATCGTAATGACGGCCT".splir(//)
+
+
+string1.each do |i|
+  b = i == string2[a]
+  puts b
+  a += 1
+end
+
+
+
+
+
+

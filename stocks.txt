@@ -1,0 +1,26 @@
+Harry
+Harry has a cash balance of 50000 and shares in the portfolios: 
+{
+
+"tech"=>#<Portfolio:0x000001018d9148 
+@portfolio_name="tech", @portfolio_stocks={}>, 
+
+"energy"=>#<Portfolio:0x000001018d8f18 
+@portfolio_name="energy", @portfolio_stocks={}>
+
+}
+
+Felix
+Felix has a cash balance of 100000 and shares in the portfolios: {
+
+"environment"=>#<Portfolio:0x000001018d8a68 
+@portfolio_name="environment", @portfolio_stocks={}>, 
+
+"new portfolio"=>#<Portfolio:0x000001018d2758 
+@portfolio_name="new portfolio", @portfolio_stocks={}>
+
+}
+Harry
+Harry has a cash balance of 50000 and shares in the portfolios: {"tech"=>#<Portfolio:0x0000010186bf30 @portfolio_name="tech", @portfolio_stocks={}>, "energy"=>#<Portfolio:0x0000010186be18 @portfolio_name="energy", @portfolio_stocks={}>}
+Felix
+Felix has a cash balance of 100000 and shares in the portfolios: {"environment"=>#<Portfolio:0x0000010186b800 @portfolio_name="environment", @portfolio_stocks={}>}

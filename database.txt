@@ -1,0 +1,5 @@
+Kriss, 36, male
+Sally, 31, Female
+Joe, 34, male
+Bill, 54, male
+Milly, 33, fe
