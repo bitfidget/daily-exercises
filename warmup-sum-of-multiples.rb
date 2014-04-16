@@ -22,16 +22,24 @@ class Sum_of
     end  
   end
 
+  # def multiples(number, mult1, mult2)
+  #   puts number
+  #   contestants = (0..number).to_a
+  #   total = 0
+  #   contestants.each do |contestant|
+  #     if (contestant % mult1 == 0) || (contestant % mult2 == 0)
+  #       puts contestant
+  #       total += contestant
+  #     end
+  #   end  
+  #   puts "total sum of #{number}s multiples (#{mult1} and #{mult2}) is: #{total}" 
+  # end
+
   def multiples(number, mult1, mult2)
-    puts number
-    contestants = (0..number).to_a
-    total = 0
-    contestants.each do |contestant|
-      if (contestant % mult1 == 0) || (contestant % mult2 == 0)
-        puts contestant
-        total += contestant
-      end
-    end  
+    contestants = (0..number).to_a.select do |contestant|
+      (contestant % mult1 == 0) || (contestant % mult2 == 0) # get all the numbers we want to deal with
+    end
+    total = contestants.inject{|sum, number| sum + number } # create the sum of all of those numbers
     puts "total sum of #{number}s multiples (#{mult1} and #{mult2}) is: #{total}" 
   end
 end
