@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script>
+  
+  // the message to encrypt
+  //var originalmsg = "Have a nice day. Feed the dog & chill out!"
+  var originalmsg = "no"
+  // strip out all spaces, non letters and make it all lowercase
+  var cryptmsg = originalmsg.toLowerCase().replace(/\W/g,'').split('');
+  // work out the segment size 
+  var seglength = Math.ceil(Math.sqrt(cryptmsg.length));
+
+  // create a parent array for all the latters, then add an array into it for each segment
+  // finally, loop through the cryptmsg to get every nth letter to add it to the nth array
+  var cryptarray = []
+  for (var i = 0; i < seglength; i++) {
+    cryptarray[i] = []
+    for (var l = i; l < cryptmsg.length; l += seglength){
+      cryptarray[i].push(cryptmsg[l])
+    }
+  };
+
+$(document).ready(function(){
+  $('#message').html(originalmsg);
+  $('#crypt').html(cryptarray);
+});
+
+  </script>
+</head>
+<body>
+<p id="message"></p>
+<p id="crypt"></p>
+  
+</body>
+</html>

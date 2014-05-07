@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+</head>
+<body>
+  <button id="robot-new">make new robot</button>
+  <ul id="robot-army">
+
+  </ul>
+
+  
+</body>
+  <script type="text/javascript">
+    // listeners
+    $('#robot-new').on('click', function(){
+      console.log('new robot button clicked');
+      robotFactory.createNew();
+    })
+
+    var robotInventory = []
+    var iDLetters = ("abcdefghijklmnopqrstuvwxyz".split(''));
+
+    // the robot factory
+    var robotFactory = {
+      createNew: function () {
+        console.log('creating new robot...');
+        robotName = [];
+        robotName.push(iDLetters[Math.floor(Math.random() * iDLetters.length)]);
+        robotName.push(iDLetters[Math.floor(Math.random() * iDLetters.length)]);
+        robotName.push(Math.floor(Math.random() * (999 - 0 + 1)) + 0);
+    
+        robotName = robotName.join();
+        robotName = robotName.replace(',','');
+        console.log(robotName);
+        robotFactory.testNew(robotName);
+      }, // end create new
+      
+      testNew: function (robotName) {
+        console.log('checking ' + robotName)
+        if (_.contains(robotInventory, robotName)){
+          robotFactory.createNew();
+        } else {
+          robotInventory.push(robotName);
+          $('#robot-army').append('<li>' + robotName + '</li>')
+        };
+      }
+    };
+
+
+
+  </script>
+</html>
