@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script>
+
+  // the input string
+  var s = "AGCTTTTCATTCCGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
+  
+  // split it to an array
+  var sArray = s.split('');
+
+  // set up an empty hash
+  sCount = {}
+
+  // iterate through the array, and add all letters to the hash as keys, and adding 1 to their value each time 
+  for(var i = 0; i < sArray.length; ++i){
+    // error check - make sure it is a valid value beofre continuing
+    if (!_.contains(['A','C','G','T'], sArray[i]) ){
+      alert('Sorry this is an invalid string - ' + sArray[i] + ' is not a valid nucleotide');
+      return false;
+    } else {
+      if (!(sArray[i] in sCount)){
+        sCount[sArray[i]] = 1;
+      } else {
+        sCount[sArray[i]] += 1;
+      };
+    };
+  // spit that shit out
+  console.log(sCount);
+  };
+
+  </script>
+</head>
+<body>
+<p><a href="https://gist.github.com/mathildathompson/68e7380bce24d650806a">nucleotide counts exercsise from here</a></p>
+<p>
+s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"<br >
+dna = DNA.new(s)<br >
+dna.nucleotide_counts<br >
+# => {'A' => 20, 'T' => 21, 'G' => 17, 'C' => 12}<br >
+</p>
+</body>
+</html>

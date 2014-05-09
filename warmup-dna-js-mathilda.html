@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script>
+
+var DNAStringFactory = function(){
+  var DNA = {
+    count: function(letter){
+      if (!_.contains(['A','C','D','G'], letter)){
+        return alert('not a valid DNA string');
+      } else { 
+        _.filter(this.string, function(nucleotide){
+          return nucleotide == letter;
+        });
+        return result.length;
+      };
+    },
+    nucleotidesCount: function(){
+      var nucleotideHash = {};
+      _.each(this.string, function(nucleotide){
+        nucleotideHash[nucleotide] = nucleotideHash[nucleotide] || 0;
+        nucleotideHash[nucleotide]++;
+      });
+      return nucleotideHash;
+    }
+  }
+  return DNA
+}
+
+var dna = DNAStringFactory('AAGGTTCCCCCCAAA')
+
+  </script>
+</head>
+<body>
+<p><a href="https://gist.github.com/mathildathompson/68e7380bce24d650806a">nucleotide counts exercsise from here</a></p>
+<p>
+s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"<br >
+dna = DNA.new(s)<br >
+dna.nucleotide_counts<br >
+# => {'A' => 20, 'T' => 21, 'G' => 17, 'C' => 12}<br >
+</p>
+</body>
+</html>
